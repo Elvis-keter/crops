@@ -220,23 +220,3 @@ export const getAssignedFields = async (req, res) => {
     res.status(500).json({ message: err.message });
   }
 };
-  try {
-    const { id } = req.params;
-
-    const field = await dbGet(`SELECT * FROM fields WHERE id = ?`, [id]);
-
-    if (!field) {
-      return res.status(404).json({ error: 'Field not found' });
-    }
-
-    if (req.user.role === 'field_agent') {
-      return res.status(403).json({ error: 'Only admins can delete fields' });
-    }
-
-    await dbRun(`DELETE FROM fields WHERE id = ?`, [id]);
-
-    res.json({ message: 'Field deleted successfully' });
-  } catch (err) {
-    res.status(500).json({ error: err.message });
-  }
-};

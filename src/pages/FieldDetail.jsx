@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { useAuth } from '../services/authContext';
+import { useAuth } from '../services/authContext.jsx';
 import api from '../services/api';
 
 export function FieldDetail() {
