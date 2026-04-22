@@ -18,14 +18,12 @@ api.interceptors.request.use((config) => {
   return config;
 });
 
-// Auth API
 export const authAPI = {
   register: (data) => api.post('/auth/register', data),
   login: (data) => api.post('/auth/login', data),
   getCurrentUser: () => api.get('/auth/me'),
 };
 
-// Fields API
 export const fieldsAPI = {
   getAll: () => api.get('/fields'),
   getById: (id) => api.get(`/fields/${id}`),
