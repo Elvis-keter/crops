@@ -9,7 +9,7 @@ const PORT = process.env.PORT || 5000;
 
 // Allowed origins for CORS
 const allowedOrigins = [
-  'https://moonlit-blancmange-da1963.netlify.app',
+  'https://smartseason-crops.netlify.app',
   'https://smart-season-lake.vercel.app',
 ];
 
